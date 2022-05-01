@@ -1,0 +1,63 @@
+<!--include header-->
+<%- include('include/_header')%>
+<!--/include header-->
+
+    <!--Main site-->
+       
+    <main id="site-main">
+      <div class="container">
+          <div class="box-nav d-flex justify-between">
+               <a href="/add_laptop" class = "border-shadow">
+                   <span class = "text-gradient">New Laptop <i class="fas fa-laptop"></i></span>
+               </a>
+          </div>
+
+          <!--form handling-->
+          <form action="/" method="POST">
+           <table class = "table">
+               <thead class = "thead-dark">
+                   <tr>
+                       <th>ID</th>
+                       <th>Name</th>
+                       <th>CPU</th>
+                       <th>RAM</th>
+                       <th>Storage</th>
+                       <th>Action</th>
+                   </tr>
+               </thead>
+               <tbody>
+                <tr>
+                    <td><%= laptop._id %></td>
+                    <td><%= laptop.name %></td>
+                    <td><%= laptop.cpu %></td>
+                    <td><%= laptop.ram %></td>
+                    <td><%= laptop.storage %></td>
+                    <td>
+                        <a href="/update_laptop?id=<%= laptop._id %>" class = "btn border-shadow update">
+                            <span class = "text-gradient"><i class = "fas fa-pen-alt"></i></span>
+                        </a>
+                        <a class = "btn border-shadow delete" data-id=<%= laptop._id %> >
+                            <span class = "text-gradient"><i class = "fas fa-times"></i></span>
+                        </a>
+                    </td>
+                </tr>   
+               </tbody>
+           </table>
+          </form>
+          
+         
+      </div>
+
+      <a href="/qr_code" data-role="button" data-id=<%= laptop._id %>>Scan</a>
+     
+  </main>
+  
+<!--/Main site-->
+
+
+<!--include footer-->
+<%- include('include/_footer')%>
+<!--/include footer-->
+
+
+

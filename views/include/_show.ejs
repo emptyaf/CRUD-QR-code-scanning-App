@@ -1,0 +1,23 @@
+<% for(var i = 0; i < laptop.length; i++){ %>
+
+
+<tr>
+    <td><%= i+1 %></td>
+    <td><%= laptop[i].name %></td>
+    <td><%= laptop[i].cpu %></td>
+    <td><%= laptop[i].ram %></td>
+    <td><%= laptop[i].storage %></td>
+    <td>
+        <a href="/update_laptop?id=<%= laptop[i]._id %>" class = "btn border-shadow update">
+            <span class = "text-gradient"><i class = "fas fa-pen-alt"></i>Modify</span>
+        </a>
+        <a class = "btn border-shadow delete" data-id=<%= laptop[i]._id %> >
+            <span class = "text-gradient"><i class = "fas fa-times"></i> Delete</span>
+        </a>
+        <a href="/qr_code_image?id=<%= laptop[i]._id %>" class = "btn border-shadow update">
+            <span class = "text-gradient">qr code</span>
+        </a>
+    </td>
+</tr>   
+
+<% } %>

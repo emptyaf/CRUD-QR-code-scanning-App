@@ -1,0 +1,57 @@
+<!--include header-->
+<%- include('include/_header')%>
+<!--/include header-->
+
+
+   <!--Main site-->
+       
+   <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+             <div class="filter">
+                 <a href="/"><i class = "fas fa-angle-double-left"></i> All Laptop</a>
+             </div>
+        </div>
+
+        <div class="form-title text-center">
+            <h2 class = "text-dark">Update Laptop</h2>
+            <span class = " text-light">Use the below form to update a new laptop</span>
+        </div>
+
+        <!--add laptop form-->
+        <!--form handling-->
+<form method="POST" id = "update_laptop">
+    <div class="new_laptop">
+        <div class="form-group">
+            <label for="name" class = "text-light">Name</label>
+            <input type="hidden" name = "id" value = "<%= laptop._id %>">
+            <input type="text" name = "name" value = "<%= laptop.name %>" placeholder="Lenovo Legion 7i">
+        </div>
+        <div class="form-group">
+            <label for="cpu" class = "text-light">CPU</label>
+            <input type="text" name = "cpu" value = "<%= laptop.cpu %>" placeholder="AMD Ryzen 9 5900HS">
+        </div>
+        <div class="form-group">
+            <label for="ram" class = "text-light">RAM</label>
+            <input type="text" name = "ram" value = "<%= laptop.ram %>" placeholder="32GB DDR4 3600MHz">
+        </div>
+        <div class="form-group">
+            <label for="storage" class = "text-light">Storage</label>
+            <input type="text" name = "storage" value = "<%= laptop.storage %>" placeholder="1TB Samsung 980 Pro M.2">
+        </div>
+        <div class="form-group">
+            <button type = "submit" class = "btn text-dark update"> Save</button>
+        </div>
+    </div>
+   </form>
+
+
+    </div>
+</main>
+
+<!--/Main site-->
+
+
+<!--include footer-->
+<%- include('include/_footer')%>
+<!--/include footer-->
